@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, session
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from error import apology
+from helper import apology
 from database import db
 
 def logout():

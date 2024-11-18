@@ -1,6 +1,6 @@
 from flask import render_template, session, request, redirect
-import currencies, req_login
-from error import apology
+import currencies
+from helper import apology, login_required
 from database import db
 
 class crypto_coin(object):
@@ -19,13 +19,13 @@ class crypto_coin(object):
                 f"Current Price: ${self.current_price:.2f}]")
 
 
-@req_login.login_required
+@login_required
 def get_users_portfolios(userid:int):
     """get a list of portfolios for the user"""
     return db.execute("SELECT * FROM portfolios WHERE user_id = ?", userid)
 
 
-@req_login.login_required
+@login_required
 def delete():
     """deletes a portfolio"""
     if request.method == "POST":
@@ -39,7 +39,7 @@ def delete():
     return render_template("portfolio_del.html", portfolio=portfolio[0])
 
 
-@req_login.login_required
+@login_required
 def create():
     """
         creates a new portfolio
@@ -161,7 +161,7 @@ def calculate_pnl(coin_list: list[crypto_coin]) -> float:
     return total
 
 
-@req_login.login_required
+@login_required
 def rem_transaction():
     portfolio_id = validate_int_positive(request.args.get("folioid"), "PortfolioID")
     if isinstance(portfolio_id, str):
@@ -179,7 +179,7 @@ def rem_transaction():
     return redirect(f"/portfolio?folioid={portfolio_id}&tr=1")
 
 
-@req_login.login_required
+@login_required
 def add_coin_to_portfolio():
     """add an entry for a purchase"""
     if request.method == "POST":
@@ -268,7 +268,7 @@ def rem_coin_from_portfolio():
         return render_template("portfolio_transaction.html", portfolio_id=portfolio_id, coin=currencies.get_coin_from_db_by_id(coin_id)[0], request=request, amount_max=quantity)
 
 
-@req_login.login_required
+@login_required
 def portfolio():
     """
         accumulates data based on the users portfolio and renders the template.

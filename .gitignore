@@ -12,7 +12,6 @@ key.py
 db_stuff.py
 bybit.py
 
-req.txt
 dockerfile
 
 *_test.py

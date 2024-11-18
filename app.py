@@ -2,7 +2,7 @@ from flask import Flask, redirect, render_template
 from flask_session import Session
 
 import users, currencies, portfolio
-from error import apology
+from helper import apology
 
 app = Flask(__name__)
 

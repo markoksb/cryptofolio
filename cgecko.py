@@ -1,6 +1,6 @@
 import requests
 
-from error import apology
+from helper import apology
 from key import coingecko_api_key
 
 url = "https://api.coingecko.com/api/v3/"
