@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}
+- Portfolio
+{% endblock %}
+
+{% block body %}
+    <br>
+    Specify the amount 
+    {% if request.path == "/coin_add" %} 
+        bought and the price per {{ coin.name }},<br>instead of the amount you can specify the total.<br><br>
+    {% else %}
+        sold. And the proceeds.
+    {% endif %}
+    <form action="{{ request.path }}" method="post">
+        <input type="hidden" name="folioid" value="{{ portfolio_id }}">
+        <input type="hidden" name="cid" value="{{ coin.id }}">
+        <div class="mb-3">
+            amount:
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto custom-input" name="amount" id="amount" placeholder="amount" type="number" step="any" min="0" value="{{ amount_max }}" oninput="autoCalculate()">
+        </div>
+        {% if request.path == "/coin_add" %} 
+        <div class="mb-3">
+            price per:
+            <input class="form-control mx-auto w-auto custom-input" name="price" id="price" placeholder="price" type="number" step="any" min="0" value="{{ coin.current_price }}" oninput="autoCalculate()">
+        </div>
+        {% endif %}
+        <div class="mb-3">
+            value total:
+            <input class="form-control mx-auto w-auto custom-input" name="total" id="total" placeholder="total" type="number" step="any" min="0" oninput="autoCalculate()">
+        </div>
+        <button class="btn custom-button" type="submit">{{ 'add' if request.path == "/coin_add" else 'remove' }}</button>
+    </form>
+    <script>
+        // TODO: gotta rethink this JS
+        function autoCalculate() {
+            // Get all the input fields
+            const amountInput = document.getElementById('amount');
+            const priceInput = document.getElementById('price');
+            const totalInput = document.getElementById('total');
+
+            // Parse the current values
+            const amount = parseFloat(amountInput.value);
+            const price = parseFloat(priceInput.value);
+            const total = parseFloat(totalInput.value);
+
+            // Determine the currently active input (being edited)
+            const activeElement = document.activeElement;
+
+            // Only calculate and update if the active field is not being changed
+            if ( price && total) {
+                amountInput.value = total / price;
+            }
+        }
+    </script>
+{% endblock %}

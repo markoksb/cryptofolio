@@ -1,0 +1,138 @@
+body {
+    background-color: #484444;
+    color: #ffffff;
+    font-family: 'Source Sans Pro', 'Helvetica', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+table {
+    text-align: center;
+}
+table.transaction {
+    min-width: 80%;
+}
+a {
+    color: #ffc000;
+}
+a:hover {
+    color: #ff0000;
+}
+
+tr.row-lighter {
+    background-color: #504646;
+}
+tr.row-topb {
+    border-top: 1px solid #444040;
+}
+td.col-right {
+    text-align: right;
+}
+td.col-left {
+    text-align: right;
+}
+.rounded-border {
+    border: 2px solid #444040;
+    border-radius: 8px;
+    padding: 0px;
+}
+
+.smaller {
+    font-size: 0.95em;
+}
+
+.shadow {
+    box-shadow: 0 0 8px 5px rgba(60, 150, 150, 0.1);
+}
+.shadow-top {
+    clip-path: polygon(0% -20%, 100% -20%, 100% 100%, 0% 100%);
+}
+.shadow-right {
+    clip-path: polygon(0% 0%, 120% 0%, 120% 100%, 0% 100%);
+}
+.shadow-bottom {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 120%, 0% 120%);
+}
+.shadow-left {
+    clip-path: polygon(-20% 0%, 100% 0%, 100% 100%, -20% 100%);
+}
+.nav-border {
+    border-bottom: 1px solid #ffc000;
+}
+.mango {
+    color: #ffc000;
+}
+a.mango:hover {
+    color: #cc8000;
+}
+.red {
+    color: #dd6000;
+}
+a.red:hover {
+    color: #cc8000;
+}
+.torquese {
+    color: #338484;
+}
+.nav-link:hover {
+    color: #338484;
+}
+.no-underline {
+    text-decoration: none;
+}
+.num-positive {
+    color: rgb(70, 240, 70);
+}
+.num-negative {
+    color: rgb(240, 70, 70);
+}
+.head-size {
+    font-size: larger;
+}
+  /* layout for example */
+.box {
+    display: inline-block;
+    vertical-align: top;
+    background: #338484;
+    color: #fff;
+    width: 4em;
+    height: 2em;
+    margin: 1em;
+    padding: 1em;
+}
+
+footer {
+    position: fixed;
+    background-color: #484444;
+    bottom: 0;
+    width: 100%;
+    z-index: 800;
+    height: auto;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for contrast */
+}
+footer p {
+    line-height: 0.2; /* Adjust line-height to reduce vertical spacing */
+}
+
+.form-control.custom-input {
+    border-color: #000; /* Custom border color */
+    background-color: #484444; /* Custom background */
+    color: #ffffff; /* Text color */
+}
+.btn.custom-button {
+    background-color: #ffc000; /* Custom background */
+    border: none; /* Remove border */
+    color: #000000; /* Text color */
+}
+.btn.custom-button:hover {
+    background-color: #dd8000; /* Darker shade on hover */
+}
+.custom-input:focus {
+    border-color: #ffc000; /* Custom border color */
+    box-shadow: 0 0 5px rgba(255, 87, 51, 0.5); /* Custom focus shadow */
+    outline: none; /* Remove the default blue outline */
+}
+
+@media (max-width: 768px) {
+    .currency-table th:nth-child(6), .currency-table td:nth-child(6),
+    .currency-table th:nth-child(7), .currency-table td:nth-child(7) {
+        display: none;
+    }
+}

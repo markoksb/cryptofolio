@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+- Login
+{% endblock %}
+
+{% block body %}
+    <br>
+    <div class="container-fluid" style="align-content: center;">
+        <form action="/login" method="post">
+            <div class="mb-3">
+                username:
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto custom-input" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="mb-3">
+                password:
+                <input class="form-control mx-auto w-auto custom-input" name="password" placeholder="Password" type="password">
+            </div>
+            <button class="btn custom-button" type="submit">login</button>
+        </form>
+    </div>
+{% endblock %}
