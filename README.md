@@ -49,6 +49,18 @@ cryptofolio/
 └── users.py                        # handling of user login/logout and registration
 ```
 
+#### Installation
+Follow these steps to install the app on your device. Keep in mind that you will need an API key from [CoinGecko](https://coingecko.com). Currently you can test the app as is on my [server](https://cf.starlight.berlin).
+```
+git clone https://github.com/markoksb/cryptofolio.git           # clone the repository
+cd cryptofolio                                                  # change to the new directory
+python3 -m venv venv                                            # create a virtual environment
+source venv/bin/activate                                        # activate the environment
+pip install -r requirements.txt                                 # install the project dependencies
+echo "coingecko_api_key = '<your-coingecko-api-key>' > key.py   # add your own api key (as it's not provided)
+python3 app.py                                                  # run the app default run is 127.0.0.1:8080
+```
+
 #### Contribute
 Feel free to submit pull requests or report issues. :)
 
