@@ -1,7 +1,6 @@
 # Cryptofolio
-#### Video Demo [https://youtu.be/H3i6Lpt2MLk](https://youtu.be/H3i6Lpt2MLk)
 #### Description
-Cryptofolio: My CS50 2024 Final Project.
+Cryptofolio: This is the continuation of my [CS50 2024 Final Project](https://github.com/markoksb/crypto_portfolio).<br>
 Cryptocurrency trading across multiple exchanges makes it challenging to track performance in a unified way. With coins often distributed across different exchanges and wallets, keeping track of them all can be confusing and may lead to missed opportunities.
 I aimed to create an app to simplify tracking of cryptocurrencies across various platforms by aggregating data and providing real-time insights.<br>
 For that reason, one can create multiple independent portfolios and add transactions to them. The app keeps track of profits and losses on a currency, portfolio, and user level.<br>
@@ -49,15 +48,6 @@ cryptofolio/
 ├── requirements.txt                # Project dependencies
 └── users.py                        # handling of user login/logout and registration
 ```
-
-#### Challenges and Learning Outcomes
-Effective project planning is crucial, yet even the most meticulously crafted plans can face unexpected hurdles. During the development of Cryptofolio, I encountered several challenges that required flexibility and quick problem-solving. External commitments often competed for my time and attention, requiring a balance between maintaining momentum on the project and fulfilling other responsibilities.<br>
-Despite these challenges, this project has been an invaluable learning experience. I gained deeper insights into integrating different technologies, handling real-time data, and designing a user-centric application. I also learned to adapt my approach, troubleshoot unforeseen issues efficiently, and remain committed to continuous improvement.<br>
-This project reinforced the importance of resilience and iterative progress. While the current version provides a solid foundation, I am eager to enhance and expand Cryptofolio as opportunities arise.
-
-A notable technical challenge I faced was dealing with very small floating-point numbers. Tiny discrepancies can affect trust and insights. These small floats caused unexpected rounding errors or cluttered the user interface.<br>
-To address this, I enhanced numerical precision in Jinja templates using custom formatting. Notably, I displayed them in scientific notation. This ensured consistent and readable outputs without excess digits.<br>
-I learned the importance of precision in financial applications and refined my skills in data presentation and template rendering with Jinja. #memecoins
 
 #### Contribute
 Feel free to submit pull requests or report issues. :)
