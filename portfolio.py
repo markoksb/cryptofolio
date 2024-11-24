@@ -1,6 +1,6 @@
 from flask import render_template, session, request, redirect
 import currencies
-from helper import apology, login_required
+from helper import apology, login_required, validate_float_positive, validate_int_positive, validate_id_in_table
 from database import db
 
 class crypto_coin(object):
@@ -49,37 +49,6 @@ def create():
         return redirect(f"/portfolio?folioid={portfolio_id}")
     
     return render_template("portfolio_new.html")
-
-
-def validate_float_positive(value, name: str):
-    """Validate value to be a positive number"""
-    try:
-        val = float(value)
-        if val < 0:
-            raise ValueError(f"{name} must be positive.")
-        return val
-    except ValueError as e:
-        return str(e)
-    except Exception as e:
-        return str(e)
-    
-
-def validate_int_positive(value, name: str):
-    """Validate value to be a positive integer"""
-    try:
-        val = int(value)
-        if val < 0:
-            raise ValueError(f"{name} must be positive.")
-        return val
-    except ValueError as e:
-        return str(e)
-    except Exception as e:
-        return str(e)
-
-
-def validate_id_in_table(table_name: str, id_value: int, id_name: str = "id") -> bool:
-    """Check if an ID exists in the specified table."""
-    return db.execute(f"SELECT COUNT(*) FROM {table_name} WHERE {id_name} == ?", id_value)[0]["COUNT(*)"] == 1
 
 
 def get_total_quantity(portfolio_id: int, coin_id: int) -> float:
