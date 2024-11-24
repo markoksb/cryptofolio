@@ -12,8 +12,16 @@
 {% block body %}
     <br>
     <div class="row">
-        <div class="col-md-4 col-12 mb-2">
+        <div class="col-md-4 col-12 mb-2 head-size">
+            <img src="{{ coin.icon_url }}" width="30" height="30">
+            {{ coin.name }}
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-12 mb-2 head-size">
+            ${{ coin.current_price }}
+        </div>
+    </div>
         <div class="col-md-4 col-12 mb-2">
         </div>
         <div class="col-md-4 col-12 mb-2">
