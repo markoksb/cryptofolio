@@ -25,6 +25,6 @@ from currencies import get_coin_from_db_by_id
 def details():
     coin_id = validate_int_positive(request.args.get("id"), "CoinID")
     if not validate_id_in_table("currencies", coin_id, "id"):
-        return apology("Error finding the portfolio\nplease try again.")
+        return apology("Error finding the coin.\nplease try again.", 404)
     coin = get_coin_from_db_by_id(coin_id)[0]
     return render_template("coin_details.html", coin=coin)
