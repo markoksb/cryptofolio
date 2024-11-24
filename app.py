@@ -1,7 +1,7 @@
 from flask import Flask, redirect, render_template
 from flask_session import Session
 
-import users, currencies, portfolio
+import users, currencies, portfolio, coin
 from helper import apology
 
 app = Flask(__name__)
@@ -26,6 +26,7 @@ app.add_url_rule("/register", view_func=users.register, methods=["GET", "POST"])
 app.add_url_rule("/login", view_func=users.login, methods=["GET", "POST"])
 app.add_url_rule("/logout", view_func=users.logout)
 app.add_url_rule("/currencies", view_func=currencies.overview)
+app.add_url_rule("/coin_detail", view_func=coin.details)
 app.add_url_rule("/portfolio", view_func=portfolio.portfolio)
 app.add_url_rule("/create_portfolio", view_func=portfolio.create, methods=["GET", "POST"])
 app.add_url_rule("/delete_portfolio", view_func=portfolio.delete, methods=["GET", "POST"])

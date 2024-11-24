@@ -15,3 +15,5 @@ bybit.py
 dockerfile
 
 *_test.py
+tests/
+pytest.ini
